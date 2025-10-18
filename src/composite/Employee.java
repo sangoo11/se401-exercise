@@ -2,13 +2,21 @@ package composite;
 
 public abstract class Employee {
     protected String name;
-    protected double salary;
+    protected double baseSalary;
 
-    public Employee(String name, double salary) {
+    public Employee(String name, double baseSalary) {
         this.name = name;
-        this.salary = salary;
+        this.baseSalary = baseSalary;
     }
 
-    public abstract void getInfo();
+    public String getName() {
+        return name;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
     public abstract double getSalary();
+    public abstract void showInfo();
 }

@@ -1,17 +1,18 @@
 package composite;
 
 public class Staff extends Employee {
-    public Staff(String name, double salary) {
-        super(name, salary);
+
+    public Staff(String name, double baseSalary) {
+        super(name, baseSalary);
     }
 
     @Override
     public double getSalary() {
-        return this.salary;
+        return baseSalary;
     }
 
     @Override
-    public void getInfo() {
-        System.out.println("Staff: " + this.name + ", Salary: " + this.salary);
+    public void showInfo() {
+        System.out.println("- " + name + " : " + getSalary());
     }
 }

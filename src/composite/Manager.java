@@ -6,24 +6,17 @@ import java.util.List;
 public class Manager extends Employee {
     private List<Employee> subordinates = new ArrayList<>();
 
-    public Manager(String name, double salary) {
-        super(name, salary);
+    public Manager(String name, double baseSalary) {
+        super(name, baseSalary);
     }
 
-    public void add(Employee employee) {
-        subordinates.add(employee);
-    };
-    public void remove(Employee employee) {
-        subordinates.remove(employee);
-    };
-    public void removeAll() {
-        subordinates.clear();
-    };
-
+    public void add(Employee e) {
+        subordinates.add(e);
+    }
 
     @Override
     public double getSalary() {
-        double total = this.salary;
+        double total = baseSalary;
         for (Employee e : subordinates) {
             total += e.getSalary();
         }
@@ -31,10 +24,10 @@ public class Manager extends Employee {
     }
 
     @Override
-    public void getInfo() {
-        System.out.println("Manager: " + name + ", Salary: " + salary);
-        for (Employee employee : subordinates) {
-            employee.getInfo();
+    public void showInfo() {
+        System.out.println("+ " + name + " : " + baseSalary);
+        for (Employee e : subordinates) {
+            e.showInfo();
         }
     }
 }
